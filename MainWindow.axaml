@@ -1,0 +1,47 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Countdown2025"
+        mc:Ignorable="d" Width="300" Height="80"
+        x:Class="Countdown2025.MainWindow"
+        CanResize="True"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaChromeHints="NoChrome" PointerPressed="Window_PointerPressed"
+        ExtendClientAreaTitleBarHeightHint="0" ShowInTaskbar="False"
+        Title="Countdown2025" Loaded="Window_Loaded" Closing="Window_Closing" KeyDown="Window_KeyDown">
+
+  <Viewbox Stretch="Uniform" Name="VBox">
+    <Grid Width="300" Height="80">
+      <Grid.Styles>
+        <Style Selector="Label">
+          <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+        </Style>
+        <Style Selector="Label.Counters">
+          <Setter Property="FontSize" Value="20"></Setter>
+        </Style>
+      </Grid.Styles>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="30" />
+        <RowDefinition />
+        <RowDefinition Height="23" />
+      </Grid.RowDefinitions>
+      <Label Name="TopLabel" Grid.Row="0" Grid.ColumnSpan="4" Grid.Column="0">Järgmise aastani on jäänud:</Label>
+      <Label Name="YearLabel" IsVisible="False" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="4" Classes="Counters">1970</Label>
+      <Label Name="DDays" IsVisible="True" Classes="Counters" Grid.Row="1" Grid.Column="0">0</Label>
+      <Label Name="DHours" IsVisible="True" Classes="Counters" Grid.Row="1" Grid.Column="1">0</Label>
+      <Label Name="DMins" IsVisible="True" Classes="Counters" Grid.Row="1" Grid.Column="2">0</Label>
+      <Label Name="DSecs" IsVisible="True" Classes="Counters" Grid.Row="1" Grid.Column="3">0</Label>
+      <Label Name="LDays" IsVisible="True" Grid.Row="2" Grid.Column="0">päeva</Label>
+      <Label Name="LHours" IsVisible="True" Grid.Row="2" Grid.Column="1">tundi</Label>
+      <Label Name="LMins" IsVisible="True" Grid.Row="2" Grid.Column="2">minutit</Label>
+      <Label Name="LSecs" IsVisible="True" Grid.Row="2" Grid.Column="3">sekundit</Label>
+    </Grid>
+  </Viewbox>
+</Window>
